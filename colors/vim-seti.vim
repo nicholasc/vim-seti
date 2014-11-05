@@ -10,7 +10,7 @@ endif
 let colors_name = "seti"
 
 " General GUI colors
-hi Cursor           guifg=#151718     guibg=#2b2b2c
+hi Cursor           guifg=#33393c 	  guibg=#33393c
 hi Normal           guifg=#EFEFEF     guibg=#151718
 hi NonText          guifg=#202020     guibg=#151718
 hi LineNr           guifg=#2b3338     guibg=#0d1011
