@@ -54,7 +54,7 @@ hi Todo             guifg=#cd3f39     guibg=NONE
 hi Constant         guifg=#cd3f39     guibg=NONE
 
 hi Identifier       guifg=#9fca4c     guibg=NONE
-hi Function         guifg=#492e7e     guibg=NONE
+hi Function         guifg=#a074be    guibg=NONE
 hi Type             guifg=#e6cd69     guibg=NONE
 hi Statement        guifg=#9fca4c     guibg=NONE
 
