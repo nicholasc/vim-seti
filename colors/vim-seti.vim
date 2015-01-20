@@ -1,117 +1,159 @@
-" Clear whatever was loaded before
+" Vim Seti Color Scheme 
+" Author: Nicholas Charbonneau <nicholas.charbonneau@gmail.com>
+" Maintainer: Nicholas Charbonneau <nicholas.charbonneau@gmail.com>
+" Notes: Loosely based on Jesse Weed's seti-syntax(https://github.com/jesseweed/seti-ui) for atom.
+
 set background=dark
-hi clear
 
+highlight clear
 if exists("syntax_on")
-  syntax reset
+    syntax reset
 endif
+let g:colors_name="seti"
 
-" Theme name
-let colors_name = "seti"
+"-------------------------------------------------
+" General settings                               |
+"-------------------------------------------------
+"-------------------------------------------------
+" Syntax group   | Foreground    | Background    |
+"-------------------------------------------------
+  
+" --------------------------------
+" Editor settings
+" --------------------------------
+hi Normal           guifg=#efefef   guibg=#151718
+hi Cursor           guifg=#33393c   guibg=#33393c
+hi CursorLine       guifg=none    	guibg=#1d1f21
+hi LineNr           guifg=#2b3338   guibg=#0d1011
+hi CursorLineNr     guifg=#41b5db   guibg=none
 
-" General GUI colors
-hi Cursor           guifg=#33393c 	  guibg=#33393c
-hi Normal           guifg=#EFEFEF     guibg=#151718
-hi NonText          guifg=#202020     guibg=#151718
-hi LineNr           guifg=#2b3338     guibg=#0d1011
-hi VertSplit        guifg=#101112     guibg=#101112
-hi StatusLine       guifg=#0d1011     guibg=#AAAAAA
-hi StatusLineNC     guifg=black       guibg=#202020
-hi Folded           guifg=#808080     guibg=#0D1B0B
-hi Title            guifg=#f6f3e8     guibg=NONE
-hi Visual           guifg=NONE        guibg=#404040
-hi SpecialKey       guifg=#808080     guibg=#343434
-hi ColorColumn		guifg=NONE		  guibg=#1e2021
+" -----------------
+" - Number column -
+" -----------------
+hi CursorColumn     guifg=none    	guibg=#1d1f21
+hi FoldColumn       guifg=none   	guibg=none
+hi SignColumn       guifg=none    	guibg=none
+hi Folded           guifg=#808080   guibg=#0d1b0b
 
-hi Error            guifg=NONE        guibg=NONE
-hi ErrorMsg         guifg=white       guibg=#8E0000
-hi WarningMsg       guifg=white       guibg=#8E0000
-hi SpellBad         guifg=white       guibg=#8E0000
+" -------------------------
+" - Window/Tab delimiters - 
+" -------------------------
+hi VertSplit        guifg=#101112 	guibg=#101112
+hi ColorColumn      guifg=none		guibg=#1e2021
+hi TabLine          guifg=none    	guibg=none
+hi TabLineFill      guifg=none   	guibg=none
+hi TabLineSel       guifg=none   	guibg=none
 
-" Message displayed in lower left, such as --INSERT--
-hi ModeMsg          guifg=black       guibg=#CCCCCC
+" -------------------------------
+" - File Navigation / Searching -
+" -------------------------------
+hi Directory        guifg=none    	guibg=none
+hi Search           guifg=none   	guibg=none
+hi IncSearch        guifg=none   	guibg=none
 
-if version >= 700 " Vim 7.x specific colors
-  hi CursorLine     guifg=NONE        guibg=#1d1f21
-  hi CursorColumn   guifg=NONE        guibg=#1d1f21
-  hi CursorLineNr	guifg=#41b5db     guibg=NONE
-  hi MatchParen     guifg=#202020     guibg=#CCCCCC
-  hi Pmenu 			guibg=brown 	  gui=bold
-  hi PmenuSel       guifg=#000000     guibg=#CCCCCC
-  hi Search         guifg=NONE        guibg=NONE
-endif
+" -----------------
+" - Prompt/Status -
+" -----------------
+hi StatusLine       guifg=#0d1011   guibg=#aaaaaa
+hi StatusLineNC     guifg=#000000   guibg=#202020
+hi WildMenu         guifg=none    	guibg=none
+hi Question         guifg=none    	guibg=none
+hi Title            guifg=#f6f3e8   guibg=none
+hi ModeMsg          guifg=#000000   guibg=#cccccc
+hi MoreMsg          guifg=none    	guibg=none
 
-" Syntax highlightin a
-hi Comment          guifg=#41535b     guibg=NONE
-hi String           guifg=#c2d1d6     guibg=NONE
-hi Number           guifg=#cd3f39     guibg=NONE
+" --------------
+" - Visual aid -
+" --------------
+hi MatchParen       guifg=#202020   guibg=#cccccc
+hi Visual           guifg=none      guibg=#404040
+hi VisualNOS        guifg=none    	guibg=none
+hi NonText          guifg=#202020   guibg=#151718
+hi Todo             guifg=#cd3f39   guibg=none
+hi Underlined       guifg=none    	guibg=none    
+hi Error            guifg=none      guibg=none
+hi ErrorMsg         guifg=#ffffff   guibg=#8e0000
+hi WarningMsg       guifg=#ffffff   guibg=#8e0000
+hi Ignore           guifg=none    	guibg=none
+hi SpecialKey       guifg=#808080   guibg=#343434
 
-hi Keyword          guifg=#9fca4c     guibg=NONE
-hi PreProc          guifg=#9fca4c     guibg=NONE
-hi Conditional      guifg=#9fca4c     guibg=NONE
+" --------------------------------
+" - Variable types 				 -
+" --------------------------------
+hi Constant         guifg=#cd3f39    guibg=none
+hi String           guifg=#c2d1d6    guibg=none
+hi StringDelimiter  guifg=none    	 guibg=none
+hi Character        guifg=#cd3f39    guibg=none
+hi Number           guifg=#cd3f39    guibg=none
+hi Boolean          guifg=#cd3f39    guibg=none
+hi Float            guifg=#cd3f39    guibg=none
 
-hi Todo             guifg=#cd3f39     guibg=NONE
-hi Constant         guifg=#cd3f39     guibg=NONE
+hi Identifier       guifg=#9fca4c    guibg=none
+hi Function         guifg=#a074be    guibg=none
 
-hi Identifier       guifg=#9fca4c     guibg=NONE
-hi Function         guifg=#a074be    guibg=NONE
-hi Type             guifg=#e6cd69     guibg=NONE
-hi Statement        guifg=#9fca4c     guibg=NONE
+" --------------------------------
+" - Language constructs 		 -
+" --------------------------------
+hi Statement        guifg=#9fca4c    guibg=none
+hi Conditional      guifg=#9fca4c    guibg=none
+hi Repeat           guifg=#9fca4c    guibg=none
+hi Label            guifg=#9fca4c    guibg=none
+hi Operator         guifg=#55b5db    guibg=none
+hi Keyword          guifg=#9fca4c    guibg=none
+hi Exception        guifg=#9fca4c    guibg=none
+hi Comment          guifg=#41535b    guibg=none
 
-hi Special          guifg=#1788ce     guibg=NONE
-hi Delimiter        guifg=#FFFFFF     guibg=NONE
-hi Operator         guifg=#55b5db     guibg=NONE
+hi Special          guifg=#1788ce    guibg=none
+hi SpecialChar      guifg=#1788ce    guibg=none
+hi Tag              guifg=#1788ce    guibg=none
+hi Delimiter        guifg=#ffffff    guibg=none
+hi SpecialComment   guifg=#1788ce    guibg=none
+hi Debug            guifg=#1788ce    guibg=none    
 
-hi link phpDocTags 		PreProc
-hi link phpDocParam     Comment
-hi link phpClasses 		Number
-hi link phpFunctions    Function
-hi link phpMemberSelector Number
-hi link phpMethodsVar 	Statement
-hi link Character       Constant
-hi link Boolean         Constant
-hi link Float           Number
-hi link Repeat          Statement
-hi link Label           Statement
-hi link Exception       Statement
-hi link Include         PreProc
-hi link Define          PreProc
-hi link Macro           PreProc
-hi link PreCondit       PreProc
-hi link StorageClass    Constant
-hi link Structure       Type
-hi link Typedef         Type
-hi link Tag             Special
-hi link SpecialChar     Special
-hi link SpecialComment  Special
-hi link Debug           Special
+" ----------
+" - C like -
+" ----------
+hi PreProc          guifg=#9fca4c    guibg=none
+hi Include          guifg=#9fca4c    guibg=none
+hi Define           guifg=#9fca4c    guibg=none
+hi Macro            guifg=#9fca4c    guibg=none
+hi PreCondit        guifg=#9fca4c    guibg=none
 
-" Special for Java
-hi link javaScopeDecl         Identifier
-hi link javaCommentTitle      javaDocSeeTag
-hi link javaDocTags           javaDocSeeTag
-hi link javaDocParam          javaDocSeeTag
-hi link javaDocSeeTagParam    javaDocSeeTag
+hi Type             guifg=#e6cd69    guibg=none
+hi StorageClass     guifg=#cd3f39    guibg=none
+hi Structure        guifg=#e6cd69    guibg=none
+hi Typedef          guifg=#e6cd69    guibg=none
 
-hi javaDocSeeTag              guifg=#CCCCCC     guibg=NONE        gui=NONE      ctermfg=darkgray    ctermbg=NONE        cterm=NONE
-hi javaDocSeeTag              guifg=#CCCCCC     guibg=NONE        gui=NONE      ctermfg=darkgray    ctermbg=NONE        cterm=NONE
-"hi javaClassDecl              guifg=#CCFFCC     guibg=NONE        gui=NONE      ctermfg=white       ctermbg=NONE        cterm=NONE
+" --------------------------------
+" - Diff 						 -
+" --------------------------------
+hi DiffAdd          guifg=none    	guibg=none
+hi DiffChange       guifg=none    	guibg=none
+hi DiffDelete       guifg=none    	guibg=none
+hi DiffText         guifg=none    	guibg=none
 
-" Special for XML
-" hi link xmlTag          Keyword
-" hi link xmlTagName      Conditional
-" hi link xmlEndTag       Identifier
+" --------------------------------
+" - Completion menu 			 -
+" --------------------------------
+hi Pmenu            guifg=none    	guibg=none
+hi PmenuSel         guifg=#000000   guibg=#cccccc
+hi PmenuSbar        guifg=none    	guibg=none
+hi PmenuThumb       guifg=none    	guibg=none
 
-" Special for HTML
-" hi link htmlTag         Keyword
-" hi link htmlTagName     Conditional
-" hi link htmlEndTag      Identifier
+" --------------------------------
+" - Spelling 					 -
+" --------------------------------
+hi SpellBad         guifg=#ffffff   guibg=#8e0000
+hi SpellCap         guifg=none    	guibg=none
+hi SpellLocal       guifg=none   	guibg=none
+hi SpellRare        guifg=none    	guibg=none
 
-" Special for Javascript
-hi link javaScriptNumber      Number
-
-highlight DiffAdd term=reverse cterm=bold ctermbg=lightgreen ctermfg=16
-highlight DiffChange term=reverse cterm=bold ctermbg=lightblue ctermfg=16
-highlight DiffText term=reverse cterm=bold ctermbg=lightgray ctermfg=16
-highlight DiffDelete term=reverse cterm=bold ctermbg=lightred ctermfg=16
-highlight PmenuSel ctermfg=16 ctermbg=156
+"------------------------------------------------------------
+"- PHP (https://github.com/StanAngeloff/php.vim)            -
+"------------------------------------------------------------
+hi phpDocTags 		guifg=#9fca4c 	guibg=none
+hi phpDocParam    	guifg=#41535b   guibg=none
+hi phpClasses 		guifg=#cd3f39   guibg=none
+hi phpFunctions     guifg=#a074be   guibg=none
+hi phpMemberSelector guifg=#cd3f39    guibg=none
+hi phpMethodsVar 	guifg=#9fca4c    guibg=none
