@@ -151,9 +151,51 @@ hi SpellRare        guifg=none    	guibg=none
 "------------------------------------------------------------
 "- PHP (https://github.com/StanAngeloff/php.vim)            -
 "------------------------------------------------------------
-hi phpDocTags 		guifg=#9fca4c 	guibg=none
-hi phpDocParam    	guifg=#41535b   guibg=none
-hi phpClasses 		guifg=#cd3f39   guibg=none
-hi phpFunctions     guifg=#a074be   guibg=none
-hi phpMemberSelector guifg=#cd3f39    guibg=none
-hi phpMethodsVar 	guifg=#9fca4c    guibg=none
+hi phpComment          	Comment
+hi phpMagicConstants   	Constant
+hi phpServerVars       	Constant
+hi phpConstants        	Constant
+hi phpBoolean          	Boolean
+hi phpNumber         	Number
+hi phpStringSingle     	String
+hi phpStringDouble     	String
+hi phpBacktick         	String
+hi phpStringDelimiter  	String
+hi phpHereDoc          	String
+hi phpNowDoc           	String
+hi phpFunctions     	guifg=#a074be   guibg=none
+hi phpMethods          	Function
+hi phpMethodsVar 		guifg=#9fca4c   guibg=none
+hi phpClasses 			guifg=#cd3f39   guibg=none
+hi phpException        	Exception
+hi phpIdentifier       	Identifier
+hi phpIdentifierSimply 	Identifier
+hi phpStatement        	Statement
+hi phpStructure        	Statement
+hi phpOperator         	Operator
+hi phpMemberSelector 	guifg=#cd3f39 	guibg=none
+hi phpInclude          	PreProc
+hi phpDefine           	PreProc
+hi phpKeyword          	Keyword
+hi phpSuperglobals     	Type
+hi phpType             	Type
+hi phpParent           	Special
+hi phpSpecialChar      	SpecialChar
+hi phpStrEsc           	SpecialChar
+hi phpParentError      	Error
+hi phpOctalError       	Error
+hi phpTodo             	Todo
+	
+hi phpSplatOperator    	phpOperator
+
+hi phpCommentStar     	phpComment
+hi phpDocComment       	phpComment
+hi phpCommentTitle     	phpComment
+hi phpDocTags 			guifg=#9fca4c 	guibg=none
+hi phpDocParam    		guifg=#41535b   guibg=none
+hi phpDocIdentifier    	phpComment
+
+hi phpFCKeyword        	phpKeyword
+hi phpSCKeyword        	phpKeyword
+	
+hi phpStaticClasses    	phpClasses
